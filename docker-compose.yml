@@ -1,0 +1,37 @@
+# docker-composeのversion 基本3
+version: '3'
+
+volumes:
+  db-data:
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      # 相対パスを指定
+      - '.:/item-register'
+    # コンテナ内で使用する環境変数を指定
+    environment:
+    # database.ymlで使用
+    - 'DATABASE_PASSWORD=postgres'
+    # tty = -itのtのこと
+    tty: true
+    # stdin_open = -itのiのこと
+    stdin_open: true
+    # 今回だとdbを作成した後にwebを作成する
+    depends_on:
+      - db
+    # # webからdbにアクセスするため
+    links:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+        - 'db-data:/var/lib/postgresql/data'
+    environment:
+        - 'POSTGRES_USER=postgres'
+        - 'POSTGRES_PASSWORD=postgres'
+
