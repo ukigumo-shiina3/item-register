@@ -1,4 +1,5 @@
-sudo: required #権限の設定
+#権限の設定
+sudo: required 
 
 services: docker 
 
