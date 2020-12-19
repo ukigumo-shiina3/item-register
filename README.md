@@ -1,24 +1,19 @@
-# README
+#  udemy 「米国AI開発者がゼロから教えるDocker講座」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## バックエンド
 
-Things you may want to cover:
+- Ruby 2.6.3
 
-* Ruby version
+- Rails 6.0.3.4
 
-* System dependencies
+## 開発環境
 
-* Configuration
+- Docker/Docker-compose
 
-* Database creation
+- PostgreSQL
 
-* Database initialization
+## 本番環境
 
-* How to run the test suite
+- Travis CIによる自動テスト　
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- PostgreSQL
